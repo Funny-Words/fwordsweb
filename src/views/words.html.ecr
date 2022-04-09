@@ -1,0 +1,20 @@
+<%= render_component "navbar" %>
+<div class="flex-container">
+  <div class="flex-column">
+    <form class="flex-item2 lil-form" id="words">
+      <div class="form-flex">
+        <input class="form1" type="number" name="q" min="1" max="40" value="1">
+        <input value="Получить слова!" type="submit" class="button form1">
+      </div>
+    </form>
+    <textarea class="flex-item2 big-form" placeholder="Здесь будут слова..." style="resize: none;" name="outputwords" id="words-output" readonly></textarea>
+  </div>
+  <div class="flex-column">
+    <form class="flex-item2 lil-form" id="cword">
+      <input value="Образовать слово!" type="submit" class="button cword-btn">
+    </form>
+    <textarea class="flex-item2 big-form" placeholder="Здесь будет кслово..." style="resize: none;" name="outputcword" id="cword-output" readonly></textarea>
+  </div>
+</div>
+
+<script> <%= script "words"%> </script>
