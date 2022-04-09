@@ -12,8 +12,8 @@ cword.addEventListener("submit", event => {
 });
 
 async function getCword() {
-  //let response = await fetch("https://fwordsweb.herokuapp.com/api/v1/cword");
-  let response = await fetch("http://localhost:3000/api/v1/cword");
+  let response = await fetch("https://fwordsweb.herokuapp.com/api/v1/cword");
+  //let response = await fetch("http://localhost:3000/api/v1/cword");
 
   if (response.ok) {
     const json = await response.json();
@@ -22,8 +22,8 @@ async function getCword() {
 }
 
 async function getWords(n) {
-  //let response = await fetch(`https://fwordsweb.herokuapp.com/api/v1/words?q=${n}`);
-  let response = await fetch(`http://localhost:3000/api/v1/words?q=${n}`);
+  let response = await fetch(`https://fwordsweb.herokuapp.com/api/v1/words?q=${n}`);
+  //let response = await fetch(`http://localhost:3000/api/v1/words?q=${n}`);
 
   if (response.ok) {
     const json = await response.json();
