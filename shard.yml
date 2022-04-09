@@ -12,7 +12,7 @@ dependencies:
   kemal:
     github: kemalcr/kemal
   funny_wrds:
-    github: uebernihilist/funny_wrds
+    github: Funny-Words/funny_wrds
 
 crystal: 1.4.0
 
