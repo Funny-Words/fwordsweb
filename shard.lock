@@ -9,8 +9,8 @@ shards:
     version: 0.2.2
 
   funny_wrds:
-    git: https://github.com/fragilecopy/funny_wrds.git
-    version: 1.0.0+git.commit.0ad86107ad76ca83c285cc569863fb128c3c7e27
+    git: https://github.com/funny-words/funny_wrds.git
+    version: 1.0.0+git.commit.583014f79f16f1cf81d53e481d0850c925a08351
 
   kemal:
     git: https://github.com/kemalcr/kemal.git
