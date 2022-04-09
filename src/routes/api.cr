@@ -8,6 +8,7 @@ struct APIRouter
     # Filter
     before_all "/api/v#{API_VER}/words" do |env|
       env.response.content_type = "application/json"
+      env.response.headers["Access-Control-Allow-Origin"] = "*"
     end
 
     # Words route
@@ -25,6 +26,7 @@ struct APIRouter
     # Filter
     before_all "/api/v#{API_VER}/cword" do |env|
       env.response.content_type = "application/json"
+      env.response.headers["Access-Control-Allow-Origin"] = "*"
     end
 
     # Cword route
@@ -35,6 +37,7 @@ struct APIRouter
     # Filter
     before_all "/api/v#{API_VER}/allwords" do |env|
       env.response.content_type = "application/json"
+      env.response.headers["Access-Control-Allow-Origin"] = "*"
     end
 
     # All words in Array(String) route

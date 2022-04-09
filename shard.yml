@@ -2,7 +2,7 @@ name: fwordsweb
 version: 0.1.0
 
 authors:
-  - fragilecopy
+  - uebernihilist
 
 targets:
   fwordsweb:
@@ -12,7 +12,7 @@ dependencies:
   kemal:
     github: kemalcr/kemal
   funny_wrds:
-    github: fragilecopy/funny_wrds
+    github: uebernihilist/funny_wrds
 
 crystal: 1.4.0
 

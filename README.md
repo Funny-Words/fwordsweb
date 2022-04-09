@@ -1,22 +1,10 @@
 # fwordsweb
 
-TODO: Write a description here
-
-## Installation
-
-TODO: Write installation instructions here
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
+Web version of Funny Words
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/fwordsweb/fork>)
+1. Fork it (<https://github.com/Funny-Words/fwordsweb/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -24,4 +12,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [UberNihilist](https://github.com/your-github-user) - creator and maintainer
+- [UberNihilist](https://github.com/uebernihilist) - creator and maintainer
