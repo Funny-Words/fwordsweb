@@ -9,6 +9,9 @@ targets:
     main: src/fwordsweb.cr
 
 dependencies:
+  spec-kemal:
+    github: kemalcr/spec-kemal
+    branch: master
   kemal:
     github: kemalcr/kemal
   funny_wrds:
