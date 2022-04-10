@@ -162,6 +162,10 @@ input:focus {
     font-size: 25px;
   }
 
+  .cword-area {
+    height: 100px;
+  }
+
   .text-center {
     font-size: 25px;
   }
