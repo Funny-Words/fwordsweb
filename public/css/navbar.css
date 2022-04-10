@@ -108,3 +108,10 @@ a {
     padding: 5px 5px;
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .logo a,
+  .main-nav a {
+    padding: 2px 2px;
+  }
+}

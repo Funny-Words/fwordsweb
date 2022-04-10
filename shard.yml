@@ -16,6 +16,8 @@ dependencies:
     github: kemalcr/kemal
   funny_wrds:
     github: Funny-Words/funny_wrds
+  moongoon:
+    github: elbywan/moongoon
 
 crystal: 1.4.0
 

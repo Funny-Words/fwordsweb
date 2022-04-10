@@ -5,6 +5,20 @@ struct MainRouter
       layout "home"
     end
 
+    # GET Login(out) routes
+    get "/login" do
+      layout "login"
+    end
+
+    get "/logout" do |env|
+      env.redirect "/"
+    end
+
+    # POST Login(out) routes
+    post "/login" do
+      # ....
+    end
+
     # Words route
     get "/words" do
       layout "words"
