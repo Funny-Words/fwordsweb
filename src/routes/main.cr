@@ -11,7 +11,7 @@ struct MainRouter
     end
 
     get "/allwords" do
-      layout "all_words"
+      layout "allwords"
     end
 
     get "/editor" do
