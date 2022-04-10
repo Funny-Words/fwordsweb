@@ -2,6 +2,8 @@
 
 fwordsweb stands for Funny Words web
 
+Credits: I used the style and some code from [Mango](https://github.com/hkalexling/Mango)
+
 ## Screenshots
 
 Home:
