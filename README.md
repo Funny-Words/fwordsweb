@@ -1,6 +1,16 @@
 # fwordsweb
 
-Web version of Funny Words
+fwordsweb stands for Funny Words web
+
+## Screenshots
+
+Home:
+
+![screenshot1](./.github/screenshots/screenshot_home.png)
+
+Words:
+
+![screenshot2](./.github/screenshots/screenshot_words.png)
 
 ## Contributing
 
@@ -10,6 +20,12 @@ Web version of Funny Words
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
+## TODO
+
+* Code words editor
+
+* Code accounts system
+
 ## Contributors
 
-- [UberNihilist](https://github.com/uebernihilist) - creator and maintainer
+* [UberNihilist](https://github.com/uebernihilist) - creator and maintainer
