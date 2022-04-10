@@ -1,0 +1,32 @@
+<div class="flex-cont">
+  <p id="allwords"></p>
+</div>
+
+<style>
+  #allwords {
+    font-size: 20px;
+    width: 80%;
+    margin-left: 5px;
+  }
+
+  @media (max-width: 600px) {
+    #allwords {
+      font-size: 10px;
+      width: 300px;
+    }
+  }
+</style>
+
+<script>
+  async function getAllWords() {
+    let response = await fetch(`https://fwordsweb.herokuapp.com/api/v1/allwords`);
+    //let response = await fetch(`http://localhost:3000/api/v1/allwords`);
+    console.log(response)
+
+    if (response.ok) {
+      const json = await response.json();
+      document.getElementById("allwords").innerText = Object.values(json).join(", ");
+    }
+  }
+  getAllWords();
+</script>

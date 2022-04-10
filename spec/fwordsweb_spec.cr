@@ -25,12 +25,6 @@ describe "fwordsweb" do
     response.body.should_not be_empty
   end
 
-  it "renders /allwords" do
-    get "/allwords"
-    response.success?.should be_true
-    response.body.should_not be_empty
-  end
-
   it "renders /words" do
     get "/words"
     response.success?.should be_true
