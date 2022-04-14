@@ -9,7 +9,7 @@ body {
   min-height: 100vh;
 }
 
-ul {
+.main-nav {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -17,7 +17,6 @@ ul {
 
 
 h2,
-h3,
 a {
   color: #34495e;
 }
@@ -35,7 +34,6 @@ a {
 
 .main-nav {
   margin-top: 5px;
-
 }
 
 .logo a,
@@ -53,9 +51,8 @@ a {
 
 .main-nav a:hover {
   color: #718daa;
+  transition: 0.6s;
 }
-
-
 
 .header {
   padding-top: .5em;

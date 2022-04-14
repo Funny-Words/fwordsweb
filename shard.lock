@@ -4,6 +4,26 @@ shards:
     git: https://github.com/sija/backtracer.cr.git
     version: 1.2.1
 
+  bson:
+    git: https://github.com/elbywan/bson.cr.git
+    version: 0.3.3
+
+  coffee:
+    git: https://github.com/636f7374/coffee.cr.git
+    version: 0.1.1
+
+  cryomongo:
+    git: https://github.com/elbywan/cryomongo.git
+    version: 0.3.10
+
+  dotenv:
+    git: https://github.com/gdotdesign/cr-dotenv.git
+    version: 1.0.0
+
+  durian:
+    git: https://github.com/636f7374/durian.cr.git
+    version: 0.1.5
+
   exception_page:
     git: https://github.com/crystal-loot/exception_page.git
     version: 0.2.2
@@ -12,9 +32,21 @@ shards:
     git: https://github.com/funny-words/funny_wrds.git
     version: 1.0.0+git.commit.583014f79f16f1cf81d53e481d0850c925a08351
 
+  ipaddress:
+    git: https://github.com/64726f70/ipaddress.cr.git
+    version: 1.0.0
+
   kemal:
     git: https://github.com/kemalcr/kemal.git
     version: 1.1.2
+
+  kemal-session:
+    git: https://github.com/kemalcr/kemal-session.git
+    version: 1.0.0
+
+  moongoon:
+    git: https://github.com/elbywan/moongoon.git
+    version: 0.7.4
 
   radix:
     git: https://github.com/luislavena/radix.git
@@ -23,4 +55,8 @@ shards:
   spec-kemal:
     git: https://github.com/kemalcr/spec-kemal.git
     version: 1.0.0+git.commit.97733e57c8348d0c8301989aa63471b2a72ea7a3
+
+  wrench:
+    git: https://github.com/73686f77/wrench.cr.git
+    version: 0.1.3
 

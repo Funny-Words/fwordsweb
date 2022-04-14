@@ -1,1 +1,37 @@
-<%# TODO: Code login system %>
+<div class="loginall">
+  <div class="login-container">
+    <div class="general-item">
+      <div class="tab">
+        <button class="tablinks" onclick="openv(event, 'login')" id="defaultOpen">Login</button>
+        <button class="tablinks" onclick="openv(event, 'register')">Register</button>
+      </div>
+
+      <div id="login" class="tabcontent">
+        <form class="lform login-form">
+          <label for="username">USER NAME</label>
+          <input type="text" class="linput" id="username" name="username" maxlength="15" minlength="3" required>
+          <label for="password">PASSWORD</label>
+          <input type="password" class="linput" id="password" name="password" maxlength="25" minlength="8" required>
+          <input type="submit" class="lsubmit" value="Login">
+          <p class="message" id="login-msg"></p>
+        </form>
+      </div>
+
+      <div id="register" class="tabcontent">
+        <form class="lform register-form">
+          <label for="rusername">USER NAME</label>
+          <input type="text" id="rusername" class="linput" name="username" maxlength="15" minlength="3" required>
+          <label for="rpassword">PASSWORD</label>
+          <input type="password" id="rpassword" class="linput" name="password" maxlength="25" minlength="8" required>
+          <label for="password2">CONFIRM PASSWORD</label>
+          <input type="password" id="password2" class="linput" name="password2" maxlength="25" minlength="8" required>
+          <input type="submit" class="lsubmit" value="Register">
+          <p class="message" id="register-msg"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= script "login_tabs" %>
+<%= script "login_forms" %>

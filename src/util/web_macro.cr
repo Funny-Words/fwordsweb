@@ -11,5 +11,5 @@ macro render_component(name)
 end
 
 macro script(name)
-  render "public/javascript/#{{{name}}}.js"
+  render "public/javascript/#{{{name}}}.html.ecr"
 end

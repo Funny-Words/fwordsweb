@@ -14,10 +14,14 @@ dependencies:
     branch: master
   kemal:
     github: kemalcr/kemal
+  kemal-session:
+    github: kemalcr/kemal-session
   funny_wrds:
     github: Funny-Words/funny_wrds
   moongoon:
     github: elbywan/moongoon
+  dotenv:
+    github: gdotdesign/cr-dotenv
 
 crystal: 1.4.0
 

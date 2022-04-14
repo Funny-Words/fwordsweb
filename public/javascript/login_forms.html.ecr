@@ -1,0 +1,44 @@
+<script>
+  let loginForm = document.querySelector(".login-form");
+  let registerForm = document.querySelector(".register-form");
+  let lmessage = document.getElementById("login-msg");
+  let rmessage = document.getElementById("register-msg");
+
+  loginForm.addEventListener("submit", async event => {
+    event.preventDefault();
+    let formData = new FormData(loginForm);
+    ({ username, password } = formData);
+    let msg = await postData("/login", {
+      username: username,
+      password: password
+    });
+    lmessage.innerText = msg.message;
+  })
+
+  registerForm.addEventListener("submit", async event => {
+    event.preventDefault();
+    let formData  = new FormData(registerForm);
+    let username  = formData.get("username");
+    let password  = formData.get("password");
+    let password2 = formData.get("password2");
+
+    console.log(username, password);
+    let msg = await postData("/register", {
+      username: username,
+      password: password,
+      password2: password2
+    });
+    rmessage.innerText = msg.message;
+  })
+
+  async function postData(url = '', data={}) {
+    const response = await fetch(url, {
+      method: "POST",
+      cache: "no-cache",
+      credentials: "same-origin",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    return response.json();
+  }
+</script>
