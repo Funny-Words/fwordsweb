@@ -26,8 +26,6 @@ Words:
 
 * Code words editor
 
-* Code accounts system
-
 ## Contributors
 
 * [UberNihilist](https://github.com/uebernihilist) - creator and maintainer
