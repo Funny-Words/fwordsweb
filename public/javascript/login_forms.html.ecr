@@ -7,7 +7,9 @@
   loginForm.addEventListener("submit", async event => {
     event.preventDefault();
     let formData = new FormData(loginForm);
-    ({ username, password } = formData);
+    let username = formData.get("username");
+    let password = formData.get("password");
+
     let msg = await postData("/login", {
       username: username,
       password: password
@@ -22,7 +24,6 @@
     let password  = formData.get("password");
     let password2 = formData.get("password2");
 
-    console.log(username, password);
     let msg = await postData("/register", {
       username: username,
       password: password,
@@ -41,4 +42,17 @@
     })
     return response.json();
   }
+
+  /*function getData(url = '') {
+    fetch(url, {
+      headers: {
+        "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Im15dXNlciIsInVzZXJfaWQiOnsiJG9pZCI6IjYyNTg1ZWY0MjJiZWM1NjI2YjFmMDBkYyJ9LCJpc19hZG1pbiI6ZmFsc2UsInJlZ2lzdGVyZWRfYXQiOjE2NDk5NTg2NDQsImlhdCI6MTY0OTk1ODczNywiZXhwIjoxNjUwMDQ1MTM3fQ.3X0gdQpQllS0X5pdu4WlyBNnQS369anneqTatXLbff0"
+      }
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.log(error));
+  }
+
+  getData("http://localhost:3000/api/v1/words/add_word"); */
 </script>

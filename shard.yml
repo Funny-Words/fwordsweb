@@ -22,6 +22,8 @@ dependencies:
     github: elbywan/moongoon
   dotenv:
     github: gdotdesign/cr-dotenv
+  jwt:
+    github: crystal-community/jwt
 
 crystal: 1.4.0
 

@@ -41,5 +41,13 @@ struct APIRouter
     get "/api/v#{API_VER}/allwords" do
       {"allwords": @fwords.get_arr}.to_json
     end
+
+    get "/api/v1/words/add_word" do |env|
+      if Storage.verify_token env
+        {"msg": "LOL"}.to_json
+      else
+        halt env, 403, "403: Forbidden"
+      end
+    end
   end
 end

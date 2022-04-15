@@ -1,6 +1,7 @@
 require "moongoon"
 require "kemal"
 require "kemal-session"
+require "jwt"
 require "http/client"
 require "./routes/*"
 require "./util/web_macro"
@@ -10,6 +11,16 @@ class Server
   def initialize
     error 404 do
       message = "HTTP 404: Not Found"
+      layout "message"
+    end
+
+    error 403 do
+      message = "HTTP 403: Forbidden"
+      layout "message"
+    end
+
+    error 401 do
+      message = "HTTP 401: Unauthorized"
       layout "message"
     end
 
@@ -25,8 +36,9 @@ class Server
 
     Kemal::Session.config do |c|
       c.cookie_name = "session_id"
-      c.secret = ENV["SECRET"]
-      c.timeout = 365.days
+      c.secret      = ENV["SECRET"]
+      c.timeout     = 365.days
+      c.secure      = true
       c.gc_interval = 1.day
     end
   end

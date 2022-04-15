@@ -17,49 +17,88 @@ struct MainRouter
       env.redirect "/"
     end
 
-    # POST Login(out) routes
+    # POST Login route
     post "/login" do |env|
-      message = "Invalid username or password"
+    env.response.content_type = "application/json"
       begin
         username = env.params.json["username"].as(String)
-        found_user = Storage::User.find_one({ username: username })
+        user = Storage::User.find_one({ username: username })
 
-        if found_user
+        if user
           password  = env.params.json["password"].as(String)
-          stored_pw = found_user["password"]
+          stored_pw = user.password
 
+          # Creating token
           if Storage.verify_password(stored_pw, password)
-            message = "Successfully logged in!"
+            token = Storage.generate_token({
+              "username" => username,
+              "user_id" => user._id,
+              "is_admin" => user.is_admin,
+              "registered_at" => user.registered_at,
+              "iat" => Time.utc.to_unix,
+              "exp" => Time.utc.to_unix + 86_400
+            })
+
+            userobject = Storage::UserStorableObject.new(username, token)
+            env.session.object("user", userobject)
           end
+        else
+          halt env, status_code: 401, response: "Invalid username or password"
         end
       rescue ex
         Log.error { ex }
+        halt env, status_code: 500, response: "Internal server error"
       end
+      env.redirect "/"
     end
 
-    # Register routes
+    # Register route
     post "/register" do |env|
-      message = "Successfully registered!"
+    env.response.content_type = "application/json"
       begin
         username  = env.params.json["username"].as(String)
         password  = env.params.json["password"].as(String)
         password2 = env.params.json["password2"].as(String)
 
+        # Validation
         if Validation.validate_username(username) && Validation.validate_passwords(password, password2)
           if !Storage::User.find_one({ username: username })
             hashed_password = Storage.hash_password(password)
-            Storage::User.new(username: username, password: hashed_password, is_admin: false).insert
+
+            registered_at = Time.utc.to_unix
+
+            user = Storage::User.new(
+              username: username,
+              password: hashed_password,
+              is_admin: false,
+              registered_at: registered_at)
+            user.insert
+
+            # Creating token
+            token = Storage.generate_token({
+              "username" => username,
+              "user_id" => user._id,
+              "is_admin" => user.is_admin,
+              "registered_at" => registered_at,
+              "iat" => registered_at,
+              "exp" => registered_at + 86_400
+            })
+
+            userobject = Storage::UserStorableObject.new(username, token)
+            env.session.object("user", userobject)
           else
-            message = "Username already exists"
+            halt env, status_code: 409, response: "User already exists or passwords do not match"
           end
         else
-          message = "User already registered or passwords do not match"
+          halt env, status_code: 400, response: "User already exists or passwords do not match"
         end
       rescue ex
         Log.error { ex }
+        halt env, status_code: 500, response: "Internal server error"
       end
 
-      {"message": message}.to_json
+      env.response.status_code = 200
+      env.redirect "/"
     end
 
     get "/words" do
@@ -72,6 +111,16 @@ struct MainRouter
 
     get "/editor" do
       layout "editor"
+    end
+
+    get "/mytoken" do |env|
+      begin
+      user = env.session.object("user").as(Storage::UserStorableObject)
+      env.response.content_type = "application/json"
+      {"token": user.token}.to_json
+      rescue ex
+        halt env, status_code: 401, response: "Unauthorized"
+      end
     end
   end
 end
